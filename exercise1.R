@@ -1,3 +1,4 @@
+#i would recommond to make the comments in english ;-)
 # Aufgabe 1
 # a)
 n <- 100
