@@ -33,9 +33,9 @@ sum(v_round == 1)
 
 # Aufgabe 3
 # a)
-x2 <- cbind(c(1:10)^2)
-y2 <- rbind(c(1:10)^2)
-sum (x2 %*% y2 >= 50) /10^2  # events / possible outcomes
+x <- matrix(rep(c(1:10),10), nrow = 10, byrow = T)^2
+y = t(x)
+result = sum (x + y >= 50) /10^2  # events / possible outcomes 
 # b)
 n <- 100000
 sum(runif(n)^2 + runif(n)^2 >= 1) / n
@@ -60,9 +60,9 @@ phi <- acos(sproduct / (norm_v * norm_w))
 phi
 # b)
 M = matrix(runif(4, min = -1, max = 1), nrow = 2)
-# Winkel zwischen der 1. und 2. Zeile
+# Winkel zwischen der 1. und 2. Zeilen
 acos(drop(M[,1] %*% M[,2]) / (drop(M[,1] %*% M[,1])^(1/2) * drop(M[,2] %*% M[,2])^(1/2)))
-# Winkel zwischen der 1. und 2. Spalte
+# Winkel zwischen der 1. und 2. Spalte<-<.
 acos(drop(M[1,] %*% M[2,]) / (drop(M[1,] %*% M[1,])^(1/2) * drop(M[2,] %*% M[2,])^(1/2)))
 
 
