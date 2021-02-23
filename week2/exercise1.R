@@ -18,4 +18,4 @@ word_list[which.max(nchar(word_list))]
 
 # g)
 word_table <- sort(table(word_list), decreasing = T)
-barplot(word_table[1:10])
+barplot(word_table[1:10], main = "10 most common words")
