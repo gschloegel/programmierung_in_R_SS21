@@ -20,9 +20,15 @@ data$BMI <- round(data$Weight / (data$Height / 100)^2, digits = 1)
 # rounding results before classification is a bad idea
 
 # f)
-data$BMI_class <- cut(data$BMI, breaks = c(0, 18.5, 25, 30, Inf), labels = c("Untergewicht", "Normal", "Übergewicht", "Obese"), ordered_result = T)
+data$BMI_class <- cut(data$BMI, breaks = c(0, 18.5, 25, 30, Inf),
+                      labels = c("Untergewicht", "Normal", "Übergewicht", "Obese"), ordered_result = T)
 
 # g)
+# keep the classes described above
+hist(data$BMI, breaks = c(min(data$BMI), 18.5, 25, 30, max(data$BMI)))
+barplot(table(data$BMI_class))
+
+# histograms with standard classes
 hist(data$BMI)
 ggplot(data, aes(x=BMI)) + geom_histogram()
 
@@ -30,3 +36,5 @@ ggplot(data, aes(x=BMI)) + geom_histogram()
 aggregate(BMI~Gender+BMI_class, data, mean)
 
 # i)
+ggplot(data,mapping=aes(x=Height,y=Weight,col=BMI_class)) +
+  geom_point()

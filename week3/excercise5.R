@@ -4,7 +4,7 @@ data <- data.frame(weight = c(3, 7, 4, 12, 8, 10, 9, 14 , 10, 12),
 # variant 1, recursive, very inefficient
 
 max.value <- 0
-max.content <- all(possible.additions == F)
+max.content <- 0
 
 content <- rep(F, length(data$weight))
 max.weight <- 60
@@ -40,7 +40,7 @@ data <- data.frame(weight = c(3, 7, 4, 12, 8, 10, 9, 14 , 10, 12),
 
 # global variables
 max.value <- 0
-max.content <- all(possible.additions == F)
+max.content <- 0
 
 
 get_max <- function(content, weight) {
@@ -48,7 +48,7 @@ get_max <- function(content, weight) {
   if (length(content) == length(data$weight)) {
     # base case, reached end of list
     content <- append(content, rep(F, length(data$weight) - length(content)))
-    value = sum(data$value[content])
+    value <- sum(data$value[content])
     if (value > max.value) {
       max.value <<- value
       max.content <<- content
