@@ -21,7 +21,8 @@ data$BMI <- round(data$Weight / (data$Height / 100)^2, digits = 1)
 
 # f)
 data$BMI_class <- cut(data$BMI, breaks = c(0, 18.5, 25, 30, Inf),
-                      labels = c("Untergewicht", "Normal", "Übergewicht", "Obese"), ordered_result = T)
+                      labels = c("Untergewicht", "Normal", "Übergewicht", "Obese"),
+                      ordered_result = T, right = F)
 
 # g)
 # keep the classes described above
@@ -38,3 +39,4 @@ aggregate(BMI~Gender+BMI_class, data, mean)
 # i)
 ggplot(data,mapping=aes(x=Height,y=Weight,col=BMI_class)) +
   geom_point()
+

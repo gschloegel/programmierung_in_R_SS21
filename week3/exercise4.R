@@ -19,7 +19,7 @@ get_dist <- function(visited.places, dist) {
     # recursive case, extend path
     for (i in subset(1:5, !(1:5 %in% visited.places))) {
       new.dist <- dist + M[i, tail(visited.places, 1)]
-      if (new.dist < min.dist) {
+      if (new.dist < min.distance) {
         get_dist(append(visited.places, i), new.dist)
       }
     }

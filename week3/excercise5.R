@@ -47,7 +47,7 @@ get_max <- function(content, weight) {
   # recursive function to create all possible values
   if (length(content) == length(data$weight)) {
     # base case, reached end of list
-    content <- append(content, rep(F, length(data$weight) - length(content)))
+    # content <- append(content, rep(F, length(data$weight) - length(content)))
     value <- sum(data$value[content])
     if (value > max.value) {
       max.value <<- value

@@ -15,6 +15,7 @@ ggplot(data, aes(x=Base)) + geom_histogram()
 
 # e)
 mean(subset(data, Trt == "progabide")$Ysum)
+mean(subset(data, Trt == "placebo")$Ysum)
 
 # f)
 ggplot(data, aes(y=Ysum, x=Trt)) + geom_boxplot()
