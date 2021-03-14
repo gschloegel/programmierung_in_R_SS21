@@ -14,7 +14,9 @@ summary(model2)
 # b)
 
 anova(model2)
-Anova(model2, type = 2)
+a <- Anova(model2, type = 2)
+a$percent <- a$`Sum Sq` / sum(a$`Sum Sq`) *100
+a
 
 # c)
 
